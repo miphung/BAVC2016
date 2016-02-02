@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <title>Michelle Phung</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+</script>
+</head>
+<body>
+	<div class="container">
+	  <img src="img/MichelleP.gif">
+	  <p class="p-spacing">Hi! I'm Michelle, a sleep-deprived high-school student.</p>
+	  
+	  <p>Say hello!</p>
+
+	  <p>Project List</p>
+	  <ul>
+	  	<li> 
+	  		<a href="first-web-page.html">Project 1: the Remake of the First Website</a> 
+	  	</li>
+
+	  </ul>
+
+	</div>
+
+	 <div class="sidebar">
+	 	<p>some fun stuff</p>
+	 </div>
+
+	<div id="slideshow">
+   		<div>
+     		<img src="http://chaseworldhistory.weebly.com/uploads/2/5/3/2/25327555/2762075_orig.jpg">
+   		</div>
+  		 <div>
+     		<img src="/http://static.tumblr.com/q8dfwso/cTOm7x5ih/puppies.gif">
+   		</div>
+   		<div>
+     		Pretty cool eh? This slide is proof the content can be anything.
+   		</div>
+	</div>
+
+</body>
