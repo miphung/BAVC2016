@@ -3,18 +3,7 @@
   <title>Michelle Phung</title>
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script>
-$("#slideshow > div:gt(0)").hide();
 
-setInterval(function() { 
-  $('#slideshow > div:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#slideshow');
-},  3000);
-</script>
 </head>
 <body>
 	<div class="container">
@@ -28,6 +17,9 @@ setInterval(function() {
 	  	<li> 
 	  		<a href="first-web-page.html">Project 1: the Remake of the First Website</a> 
 	  	</li>
+	  	<li>
+	  		<a href="robot.html">Project 2: Making a Robot</a>
+	  	</li>
 
 	  </ul>
 
@@ -39,14 +31,14 @@ setInterval(function() {
 
 	<div id="slideshow">
    		<div>
-     		<img src="http://chaseworldhistory.weebly.com/uploads/2/5/3/2/25327555/2762075_orig.jpg">
+     		<img src="http://chaseworldhistory.weebly.com/uploads/2/5/3/2/25327555/2762075_orig.jpg" style="width:500px;height:500px;">
    		</div>
   		 <div>
-     		<img src="/http://static.tumblr.com/q8dfwso/cTOm7x5ih/puppies.gif">
+     		<img src="https://s-media-cache-ak0.pinimg.com/736x/1c/68/8b/1c688b0a1e935cc6674bb819017ec2bf.jpg" style="width:500px;height:500px;">
    		</div>
-   		<div>
-     		Pretty cool eh? This slide is proof the content can be anything.
-   		</div>
+   		
 	</div>
+<script type="js/slideshow.js"></script>
 
 </body>
+<!--http://snook.ca/archives/javascript/simplest-jquery-slideshow-->
