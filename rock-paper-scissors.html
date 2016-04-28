@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock, Paper, Scissors</title>
+	<style type="text/css">
+
+	/*centers text*/
+	h1, h3, div p{
+		text-align: center;
+	}
+
+	div{
+		border:1px solid black;
+		height: 400px;
+		float: left;
+	}
+
+	#player, #computer{
+		width:23%;
+	}
+
+	#player img, #computer img{
+		width: 50%;
+	}
+
+	#board{
+		width:50%;
+	}
+
+	#options img{
+	 	width:20%;
+	 }
+
+
+	</style>
+
+	<script type="text/javascript">
+		var playerImage = " ";
+		var randomNumber = " ";
+		var scoreText = " ";
+		var compImage = " ";
+		var round = 1 ;
+		var pScore = 0;
+		var cScore = 0;
+
+		//1 is rock, 2 is paper, 3 is scissors 
+		// pNum = player number 
+		function update(pNum){
+
+			//generate a random number between 1-3 
+			randomNumber = Math.floor((Math.random() * 3) + 1);
+
+				//if pNum is 1 then return rock
+				if (pNum == 1){
+					playerImage = "rock.png";
+				}
+				else if (pNum == 2){
+					playerImage = "paper.png";
+				}
+				else if (pNum == 3){
+					playerImage = "scissors.png";
+				}
+
+				//if cNum is 1 then return rock 
+				if (randomNumber == 1){
+					compImage = "rock.png";
+				}
+				else if (randomNumber == 2) {
+					compImage = "paper.png";
+				}
+				else if (randomNumber == 3){
+					compImage = "scissors.png";
+				}
+
+				// compare numbers to see who won
+				if (pNum == randomNumber){
+					//tie
+					scoreText = "Tie Game";
+				}
+				else if ( pNum == 1 && randomNumber == 2){
+					//rock vs paper;
+					scoreText = "Computer Wins";
+					cScore ++;
+				}
+				else if ( pNum == 1 && randomNumber == 3){
+					// rock vs scissors
+					scoreText = "Player Wins";
+					pScore++;
+				}
+				else if ( pNum == 2 && randomNumber == 3){
+					//paper vs scissors
+					scoreText = "Computer Wins";
+					cScore++;
+				}
+				else if ( pNum == 3 && randomNumber == 2){
+					// scissors vs paper
+					scoreText = "Player Wins";
+					pScore++;
+				}
+				else if ( pNum == 2 && randomNumber == 1){
+					//paper vs rock
+					scoreText = "Player Wins";
+					pScore++;
+				}
+				else if ( pNum == 3 && randomNumber == 1){
+					//scissors vs rock 
+					scoreText = "Computer Wins";
+					cScore++;
+				}
+
+				//output rock
+				//document.getElementById('result').innerHTML = playerImage;
+				//document.getElementById('cNum').innerHTML = randomNumber;
+				document.getElementById('scoreText').innerHTML = scoreText;
+				document.getElementById('player-image').innerHTML = '<img src="img/'+playerImage+ '">'; //will update the image in the player box
+				document.getElementById('comp-image').innerHTML = '<img src="img/'+compImage+ '">';
+
+				if (round < 3){
+					document.getElementById('round').innerHTML = round;
+					document.getElementById('pScore').innerHTML = pScore;
+					document.getElementById('cScore').innerHTML = cScore;
+
+				}
+				
+				if (pNum != randomNumber){
+					
+					if (round == 3){
+						document.getElementById('round').innerHTML = "Game Over";
+						round = 1; 
+						pScore = 0;
+						cScore = 0;
+						return;
+				
+					}
+					round ++;
+				}
+
+		}
+	</script>
+</head>
+<body>
+
+	<h1>Rock, Paper, Scissors Game</h1>
+	<h3>Best out of 3 rounds win!</h3>
+
+<!--player's box -->
+	<div id="player">
+		<p>Player</p>
+		<p id="player-image"></p>
+			<!-- this is where the player-image will go  -->
+		<p id="pScore"></p>
+	</div>
+
+<!-- score board -->
+	<div id="board">
+		<p>The Board</p>
+
+		<p id="scoreText"></p>
+		<p id="round"></p>
+		
+		<p id="options">
+			<!-- 1 is rock -->
+			<a href="#" Onclick="update(1);"><img src="img/rock.png"></a>
+			<!-- 2 is paper-->
+			<a href="#" onclick="update(2);"><img src="img/paper.png"></a>
+			<!-- 3 is scissors --> 
+			<a href="#" onclick="update(3);"><img src="img/scissors.png"></a>
+		</p> 
+
+
+	<!-- <p id="result"></p> -->
+	</div>
+
+<!-- computer's box -->
+	<div id="computer">
+		<p>Computer</p>
+		<p id="comp-image"></p>
+		<p id="cScore"></p>
+	</div>
+
+</body>
+</html>
