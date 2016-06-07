@@ -6,7 +6,7 @@ body {
   background-position: center;
   color: black;
   font-family: helvetica;
-  
+
 }
 .container {
   width: 60%;
@@ -62,9 +62,9 @@ a:active {
   33.33%  { opacity: 1; }
   44.44%  { opacity: 0; }
   100% { opacity: 0; }
-} 
+}
 
-.fadein { position:relative; height:332px; width:500px; }
+.fadein { position:relative; height:332px; width:500px; margin: 0 auto; }
 .fadein img { position:absolute; left:0; right:0; opacity:0; animation-name: fade; animation-duration: 9s; animation-iteration-count: infinite; }
 .fadein img:nth-child(1) { animation-delay: 0s;  }
 .fadein img:nth-child(2) { animation-delay: 3s;  }
